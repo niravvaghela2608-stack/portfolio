@@ -251,16 +251,12 @@ html {
   transform: translateY(-3px);
 }
 
-.hero-img {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background-image: url("./nirav-profile.jpeg");
-  background-size: contain;
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-color: #00c6ff;
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 
 
 .profile-card {
@@ -794,4 +790,5 @@ footer {
     font-size: 3rem;
   }
 }
+
 

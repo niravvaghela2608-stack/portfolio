@@ -270,19 +270,19 @@ html {
 }
 
 .profile-img {
-  width: 260px;
-  height: 260px;
+  width: 360px;
+  height: 360px;
   border-radius: 50%;
   overflow: hidden;
-  border: 5px solid #00c6ff;
+  border: 6px solid #00c6ff;
 }
 
 .profile-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: top;
-  display: block;
+  object-fit: contain;
+  object-position: center;
+  background-color: #111;
 }
 
 
@@ -786,6 +786,7 @@ footer {
     font-size: 3rem;
   }
 }
+
 
 
 

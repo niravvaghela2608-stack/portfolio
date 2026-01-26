@@ -52,7 +52,7 @@ html {
   background: rgba(15, 15, 15, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-color);
-  z-index: 1000;
+  z-index: 9999;
   padding: 1rem 0;
   transition: var(--transition);
   box-shadow: var(--shadow-sm);
@@ -810,3 +810,15 @@ footer {
     margin: 15px 0;
   }
 }
+.hamburger {
+  display: block;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+}
+

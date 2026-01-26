@@ -265,5 +265,23 @@ document.addEventListener('DOMContentLoaded', function() {
 document.getElementById("menu-toggle").onclick = function () {
   document.querySelector(".nav-links").classList.toggle("active");
 };
+const nameElement = document.getElementById("typing-name");
+
+if (nameElement) {
+  const text = nameElement.innerText;
+  nameElement.innerText = "";
+  let i = 0;
+
+  function typeEffect() {
+    if (i < text.length) {
+      nameElement.innerText += text.charAt(i);
+      i++;
+      setTimeout(typeEffect, 100);
+    }
+  }
+
+  window.addEventListener("load", typeEffect);
+}
+
 
 

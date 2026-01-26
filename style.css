@@ -881,3 +881,12 @@ footer {
   }
 }
 
+.logo-text {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.logo-text:hover {
+  color: #00d4ff;
+  transform: scale(1.1);
+}
+

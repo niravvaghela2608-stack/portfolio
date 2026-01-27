@@ -663,6 +663,22 @@ section {
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
+.contact-note {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: rgba(0, 212, 255, 0.1);
+  border-left: 3px solid var(--primary-color);
+  border-radius: 5px;
+  font-size: 0.875rem;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.contact-note i {
+  color: var(--primary-color);
+}
+
 /* Footer */
 footer {
   background: #0a0a0a;
@@ -889,4 +905,5 @@ footer {
   color: #00d4ff;
   transform: scale(1.1);
 }
+
 

@@ -186,6 +186,8 @@ if (contactForm) {
         }, 3000);
     }
 
+    
+
     // Parallax effect for hero section
     window.addEventListener('scroll', function() {
         const scrolled = window.pageYOffset;
@@ -289,6 +291,36 @@ if (nameElement) {
   }
 
   window.addEventListener("load", typeEffect);
+}
+
+// Add this at the VERY END of your script.js file
+function showNotification(message, type) {
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.textContent = message;
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 15px 20px;
+        border-radius: 5px;
+        color: white;
+        font-weight: 500;
+        z-index: 10000;
+        animation: slideIn 0.3s ease;
+    `;
+    
+    if (type === 'success') {
+        notification.style.background = 'linear-gradient(135deg, #00d4ff, #0099cc)';
+    } else {
+        notification.style.background = '#ff6b6b';
+    }
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.remove();
+    }, 3000);
 }
 
 

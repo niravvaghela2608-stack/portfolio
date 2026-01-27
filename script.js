@@ -111,38 +111,37 @@ document.addEventListener('DOMContentLoaded', function() {
     // Start typing effect after page load
     setTimeout(typeWriter, 500);
 
-    // Form submission handler
-const contactForm = document.querySelector('.contact-form form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(this);
-        const name = this.querySelector('input[type="text"]').value;
-        const email = this.querySelector('input[type="email"]').value;
-        const message = this.querySelector('textarea').value;
-        
-        // Simple validation
-        if (!name || !email || !message) {
-            showNotification('Please fill in all fields', 'error');
-            return;
-        }
-        
-        // Create mailto link with form data
-        const subject = encodeURIComponent(`Portfolio Contact: ${name}`);
-        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-        const mailtoLink = `mailto:niravvaghela2608@gmail.com?subject=${subject}&body=${body}`;
-        
-        // Open email client
-        window.location.href = mailtoLink;
-        
-        // Show success message
-        showNotification('Opening your email client to send the message...', 'success');
-        this.reset();
-    });
-}
-
+    // Simple Contact Form Handler
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.querySelector('.contact-form form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = this.querySelector('input[type="text"]').value;
+            const email = this.querySelector('input[type="email"]').value;
+            const message = this.querySelector('textarea').value;
+            
+            if (!name || !email || !message) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            // Create mailto link
+            const subject = encodeURIComponent('Portfolio Contact: ' + name);
+            const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message);
+            const mailtoLink = 'mailto:niravvaghela2608@gmail.com?subject=' + subject + '&body=' + body;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Reset form
+            this.reset();
+        });
+    }
+});
+    
     // Notification function
     function showNotification(message, type) {
         const notification = document.createElement('div');
@@ -325,6 +324,7 @@ function showNotification(message, type) {
         notification.remove();
     }, 3000);
 }
+
 
 
 

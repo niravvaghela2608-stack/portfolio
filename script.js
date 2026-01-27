@@ -109,28 +109,36 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(typeWriter, 500);
 
     // Form submission handler
-    const contactForm = document.querySelector('.contact-form form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const name = this.querySelector('input[type="text"]').value;
-            const email = this.querySelector('input[type="email"]').value;
-            const message = this.querySelector('textarea').value;
-            
-            // Simple validation
-            if (!name || !email || !message) {
-                showNotification('Please fill in all fields', 'error');
-                return;
-            }
-            
-            // Simulate form submission
-            showNotification('Thank you for your message! I will get back to you soon.', 'success');
-            this.reset();
-        });
-    }
+const contactForm = document.querySelector('.contact-form form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(this);
+        const name = this.querySelector('input[type="text"]').value;
+        const email = this.querySelector('input[type="email"]').value;
+        const message = this.querySelector('textarea').value;
+        
+        // Simple validation
+        if (!name || !email || !message) {
+            showNotification('Please fill in all fields', 'error');
+            return;
+        }
+        
+        // Create mailto link with form data
+        const subject = encodeURIComponent(`Portfolio Contact: ${name}`);
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+        const mailtoLink = `mailto:niravvaghela2608@gmail.com?subject=${subject}&body=${body}`;
+        
+        // Open email client
+        window.location.href = mailtoLink;
+        
+        // Show success message
+        showNotification('Opening your email client to send the message...', 'success');
+        this.reset();
+    });
+}
 
     // Notification function
     function showNotification(message, type) {
@@ -282,6 +290,7 @@ if (nameElement) {
 
   window.addEventListener("load", typeEffect);
 }
+
 
 
 

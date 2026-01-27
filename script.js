@@ -1,3 +1,6 @@
+// Add this at the top of your script.js
+console.log('Script is loading...');
+
 // Modern Portfolio JavaScript
 document.addEventListener('DOMContentLoaded', function() {
     console.log("Welcome to Nirav Vaghela Portfolio");
@@ -322,6 +325,7 @@ function showNotification(message, type) {
         notification.remove();
     }, 3000);
 }
+
 
 
 
